@@ -207,7 +207,11 @@ def start_server(host, port, processor):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--host", default="0.0.0.0")
+    parser.add_argument(
+        "--host",
+        default="127.0.0.1",
+        help="Bind address. Defaults to loopback; pass 0.0.0.0 explicitly to expose the service.",
+    )
     parser.add_argument("--port", default=9998)
 
     parser.add_argument(
